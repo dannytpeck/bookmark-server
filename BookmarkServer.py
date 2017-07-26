@@ -57,7 +57,7 @@ def CheckURI(uri, timeout=5):
     (i.e. times out).
     '''
     try:
-        r = requests.get(uri, str(timeout))
+        r = requests.get(uri, timeout=timeout)
         return r.status_code == 200
     except requests.RequestException:
         return False
